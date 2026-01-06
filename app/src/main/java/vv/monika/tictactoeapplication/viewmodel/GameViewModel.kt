@@ -25,11 +25,11 @@ class GameViewModel : ViewModel() {
 
     var message = mutableStateOf(value = "Turn: X")
         private set
-    private var status = mutableStateOf(GameStatus.ONGOING)
-
+   var status = mutableStateOf(GameStatus.ONGOING)
+       private set
     //    store wining cells
-    private var winningCells = mutableStateListOf<Pair<Int, Int>>()
-
+     var winningCells = mutableStateListOf<Pair<Int, Int>>()
+        private set
     fun makeMove(row: Int, column: Int) {
 
         if (status.value != GameStatus.ONGOING) return
@@ -43,6 +43,7 @@ class GameViewModel : ViewModel() {
         currentPlayer.value =
             if (currentPlayer.value == Player.X) Player.O
             else Player.X
+        message.value = "Turn: ${currentPlayer.value.name}"
 
 //        win check
         val winner = checkWinner()
