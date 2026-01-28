@@ -59,7 +59,7 @@ fun Cell(
                 fontWeight = FontWeight.Bold,
                 color = when(state){
                     CellState.O ->  Color.Red
-                    CellState.X -> Color.Green
+                    CellState.X -> Color.Black
                     else -> Color.Unspecified
                 }
             )

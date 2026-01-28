@@ -18,6 +18,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.focus.focusModifier
 import androidx.compose.ui.layout.ModifierLocalBeyondBoundsLayout
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import vv.monika.tictactoeapplication.viewmodel.GameViewModel
@@ -41,19 +42,22 @@ fun TicTacToeGame(viewModel: GameViewModel) {
         )
 
         Card(
-            modifier = Modifier.fillMaxWidth(),
+            modifier = Modifier.fillMaxWidth()
+                .height(55.dp),
             elevation = CardDefaults.cardElevation(
                 defaultElevation = 4.dp
             )
 
         ) {
             Box(
-                modifier = Modifier.fillMaxWidth(),
+                modifier = Modifier.fillMaxWidth()
+                    .height(55.dp),
                 contentAlignment = Alignment.Center
             ) {
                 Text(
                     viewModel.message.value,
                     fontSize = 24.sp,
+                    textAlign = TextAlign.Center,
                     fontWeight = FontWeight.Medium,
 
                     )
